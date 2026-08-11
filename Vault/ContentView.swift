@@ -1,61 +1,36 @@
-//
-//  ContentView.swift
-//  Vault
-//
-//  Created by Louis Saillen on 31.05.2026.
-//
-
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+struct MainTabView: View {
+    @State private var selectedTab = 0
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+        TabView(selection: $selectedTab) {
+            HomeView(selectedTab: $selectedTab)
+                .tabItem { Label("Accueil", systemImage: "house.fill") }
+                .tag(0)
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+            CategoriesView()
+                .tabItem { Label("Catégories", systemImage: "square.grid.2x2.fill") }
+                .tag(1)
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+            AddCouponView()
+                .tabItem { Label("Ajouter", systemImage: "plus.circle.fill") }
+                .tag(2)
+
+            AlertsView()
+                .tabItem { Label("Alertes", systemImage: "bell.fill") }
+                .tag(3)
+
+            SettingsView()
+                .tabItem { Label("Réglages", systemImage: "gearshape.fill") }
+                .tag(4)
         }
+        .tint(.blue)
     }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    MainTabView()
+        .modelContainer(for: Coupon.self, inMemory: true)
 }

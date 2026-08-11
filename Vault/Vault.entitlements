@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- App Group partagé avec la Share Extension — requis pour la sync de base de données -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.Koveo.Vault</string>
+	</array>
+	<!-- iCloud CloudKit désactivé temporairement : le container iCloud.Koveo.Vault n'est pas encore
+	     créé dans App Store Connect. Réactiver quand le container est configuré (voir vault_icloud_sync.md).
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.icloud-container-identifiers</key>
+	<array>
+		<string>iCloud.Koveo.Vault</string>
+	</array>
+	<key>com.apple.developer.icloud-services</key>
+	<array>
+		<string>CloudKit</string>
+	</array>
+	-->
+</dict>
+</plist>

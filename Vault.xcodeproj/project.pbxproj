@@ -6,9 +6,54 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EE000009FCBEEBD006069FB /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000006FCBEEBD006069FB /* Coupon.swift */; };
+		EE00000AFCBEEBD006069FB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000007FCBEEBD006069FB /* Category.swift */; };
+		EE00000BFCBEEBD006069FB /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000008FCBEEBD006069FB /* Color+Hex.swift */; };
+		EE00000CFCBEEBD006069FB /* VaultShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EE000001FCBEEBD006069FB /* VaultShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE000017FCBEEBD006069FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27FFA71D2FCBEEBD006069FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE000012FCBEEBD006069FB;
+			remoteInfo = VaultShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE000016FCBEEBD006069FB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EE00000CFCBEEBD006069FB /* VaultShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		27FFA7252FCBEEBD006069FB /* Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE000001FCBEEBD006069FB /* VaultShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VaultShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE000006FCBEEBD006069FB /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = Vault/Models/Coupon.swift; sourceTree = SOURCE_ROOT; };
+		EE000007FCBEEBD006069FB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Vault/Models/Category.swift; sourceTree = SOURCE_ROOT; };
+		EE000008FCBEEBD006069FB /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+Hex.swift"; path = "Vault/Extensions/Color+Hex.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		276505EA2FCC3E790053EB58 /* Exceptions for "VaultShareExtension" folder in "VaultShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EE000012FCBEEBD006069FB /* VaultShareExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		27FFA7272FCBEEBD006069FB /* Vault */ = {
@@ -16,10 +61,25 @@
 			path = Vault;
 			sourceTree = "<group>";
 		};
+		EE000002FCBEEBD006069FB /* VaultShareExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				276505EA2FCC3E790053EB58 /* Exceptions for "VaultShareExtension" folder in "VaultShareExtension" target */,
+			);
+			path = VaultShareExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		27FFA7222FCBEEBD006069FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE000010FCBEEBD006069FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				27FFA7272FCBEEBD006069FB /* Vault */,
+				EE000002FCBEEBD006069FB /* VaultShareExtension */,
+				EE000019FCBEEBD006069FB /* Shared Sources */,
 				27FFA7262FCBEEBD006069FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,19 @@
 			isa = PBXGroup;
 			children = (
 				27FFA7252FCBEEBD006069FB /* Vault.app */,
+				EE000001FCBEEBD006069FB /* VaultShareExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EE000019FCBEEBD006069FB /* Shared Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EE000006FCBEEBD006069FB /* Coupon.swift */,
+				EE000007FCBEEBD006069FB /* Category.swift */,
+				EE000008FCBEEBD006069FB /* Color+Hex.swift */,
+			);
+			name = "Shared Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +128,12 @@
 				27FFA7212FCBEEBD006069FB /* Sources */,
 				27FFA7222FCBEEBD006069FB /* Frameworks */,
 				27FFA7232FCBEEBD006069FB /* Resources */,
+				EE000016FCBEEBD006069FB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EE000018FCBEEBD006069FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				27FFA7272FCBEEBD006069FB /* Vault */,
@@ -69,6 +144,28 @@
 			productName = Vault;
 			productReference = 27FFA7252FCBEEBD006069FB /* Vault.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EE000012FCBEEBD006069FB /* VaultShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE000015FCBEEBD006069FB /* Build configuration list for PBXNativeTarget "VaultShareExtension" */;
+			buildPhases = (
+				EE00000FFCBEEBD006069FB /* Sources */,
+				EE000010FCBEEBD006069FB /* Frameworks */,
+				EE000011FCBEEBD006069FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EE000002FCBEEBD006069FB /* VaultShareExtension */,
+			);
+			name = VaultShareExtension;
+			packageProductDependencies = (
+			);
+			productName = VaultShareExtension;
+			productReference = EE000001FCBEEBD006069FB /* VaultShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +178,9 @@
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					27FFA7242FCBEEBD006069FB = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					EE000012FCBEEBD006069FB = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
@@ -100,12 +200,20 @@
 			projectRoot = "";
 			targets = (
 				27FFA7242FCBEEBD006069FB /* Vault */,
+				EE000012FCBEEBD006069FB /* VaultShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		27FFA7232FCBEEBD006069FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE000011FCBEEBD006069FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +230,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE00000FFCBEEBD006069FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE000009FCBEEBD006069FB /* Coupon.swift in Sources */,
+				EE00000AFCBEEBD006069FB /* Category.swift in Sources */,
+				EE00000BFCBEEBD006069FB /* Color+Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE000018FCBEEBD006069FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE000012FCBEEBD006069FB /* VaultShareExtension */;
+			targetProxy = EE000017FCBEEBD006069FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		27FFA7302FCBEEBF006069FB /* Debug */ = {
@@ -249,10 +375,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vault/Vault.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
+				DEVELOPMENT_TEAM = U5K3ZZSXQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Vault utilise la caméra pour scanner tes codes promo et QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -265,6 +396,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Koveo.Vault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -280,10 +412,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vault/Vault.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
+				DEVELOPMENT_TEAM = U5K3ZZSXQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Vault utilise la caméra pour scanner tes codes promo et QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,13 +431,67 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"MARKETING_VERSION[sdk=iphoneos*]" = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Koveo.Vault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE000013FCBEEBD006069FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = VaultShareExtension/VaultShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U5K3ZZSXQU;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VaultShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Koveo.Vault.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE000014FCBEEBD006069FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = VaultShareExtension/VaultShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U5K3ZZSXQU;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VaultShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Koveo.Vault.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,6 +514,15 @@
 			buildConfigurations = (
 				27FFA7332FCBEEBF006069FB /* Debug */,
 				27FFA7342FCBEEBF006069FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE000015FCBEEBD006069FB /* Build configuration list for PBXNativeTarget "VaultShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE000013FCBEEBD006069FB /* Debug */,
+				EE000014FCBEEBD006069FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
